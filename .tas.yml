@@ -4,6 +4,10 @@ postMerge :
       - mkdir -p /data/db
       - mkdir -p /data/log
       - touch /data/log/mongodb.log
+      - chmod 777 /data
+      - chmod 777 /data/db 
+      - chmod 777 /data/log
+      - chmod 777 /data/log/mongodb.log
       - yarn install
       - yarn run build
   
