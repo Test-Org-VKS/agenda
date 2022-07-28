@@ -2,6 +2,8 @@ postMerge :
   preRun:
     command:
       - mkdir -p /data/db
+      - yarn install
+      - yarn run build
   
   subModules:          #Not to be changed
         
@@ -18,8 +20,7 @@ postMerge :
             - echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" |  tee /etc/apt/sources.list.d/mongodb-org-4.4.list
             - apt-get update && apt-get install -y mongodb-org
             - mongod --wiredTigerCacheSizeGB 0.5   --fork  --logpath /var/log/mongodb.log &
-            - yarn install
-            - yarn run build
+
             
         runPreRunEveryTime: true
 
