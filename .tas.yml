@@ -15,7 +15,7 @@ postMerge :
             - echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" |  tee /etc/apt/sources.list.d/mongodb-org-4.4.list
             - mkdir /home/nucleus/db 
             - apt-get update && apt-get install -y mongodb-org
-            - mongod --wiredTigerCacheSizeGB 0.5 --dbpath /home/nucleus/db  &
+            - nohup mongod --wiredTigerCacheSizeGB 0.5 --dbpath /home/nucleus/db  &
             - yarn install
             - yarn run build
             
